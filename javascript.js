@@ -1,13 +1,43 @@
 const container = document.querySelector(`#container`)
+const setGrid = document.querySelector(`#setGrid`)
 
-for (let index = 0; index < 16 * 16; index++) {
-    const square = document.createElement(`div`);
-    square.classList.add('square');
-    container.appendChild(square);   
+let gridDim = 16;
+
+
+createGrid(gridDim);
+
+function createGrid(gridDim) {
+    for (let index = 0; index < (gridDim * gridDim); index++) {
+        const square = document.createElement(`div`);
+        let squareSize = 600 / gridDim - 4;
+        square.classList.add('square');
+        square.style.width = squareSize + "px";
+        container.appendChild(square);   
+        }
+    hoverColorChange();
 }
-const squares = document.querySelectorAll('div.square');
+
+
+function hoverColorChange() {
+let squares = document.querySelectorAll('div.square');
 squares.forEach((square) => {
-    square.addEventListener('hover', () => {
+    square.addEventListener('mouseover', () => {
         square.style.backgroundColor = 'red';
     });
     });
+}
+
+setGrid.addEventListener('click', () => {
+    gridDim = prompt("Set grid dimension");
+    if (gridDim > 100) {
+        gridDim = 100;
+    }
+    removeGrid();
+    createGrid(gridDim);
+})  
+
+function removeGrid() {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+}

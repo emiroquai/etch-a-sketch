@@ -12,14 +12,16 @@ body{
     width: 600px;
     margin-top: 50px;
     
+    border: 2px solid lightcoral;
+    border-radius: 2px;
+    
 }
 
 .square {
     background-color: aquamarine;
     margin: 2px;
-    /* padding: 5px; */
-    /* width: 30px; */
     aspect-ratio: 1;
+    border-radius: 2px;
     
 }
 

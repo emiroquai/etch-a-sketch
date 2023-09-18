@@ -1,8 +1,24 @@
+* {
+    font-family: Monaco, monospace;
+}
+
 body{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: rgba(255, 255, 0, 0.563);
+}
+
+.header {
+    color: gray;
+    font-size: larger;
+    max-height: 80px;
+}
+
+h2 {
+    color: gray;
+    font-size: 18px;
 }
 
 #container {
@@ -10,21 +26,23 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     width: 600px;
-    margin-top: 50px;
-    
-    border: 2px solid lightcoral;
-    border-radius: 2px;
-    
+    margin-top: 10px;
+    padding: 2px;
+    border: 2px solid lightgrey;
+    border-radius: 4px;
+    background-color: white;
 }
 
 .square {
     background-color: aquamarine;
-    margin: 2px;
+    border: 1px solid lightgray;
+    /* margin: 2px; */
     aspect-ratio: 1;
     border-radius: 2px;
-    
 }
 
-#setGrid {
-    margin-top: 30px;
+button {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-bottom: 20px;
 }

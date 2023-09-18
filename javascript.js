@@ -1,5 +1,6 @@
-const container = document.querySelector(`#container`)
-const setGrid = document.querySelector(`#setGrid`)
+const container = document.querySelector(`#container`);
+const setGrid = document.querySelector(`#setGrid`);
+const reset = document.querySelector(`#reset`);
 
 let gridDim = 16;
 
@@ -9,7 +10,7 @@ createGrid(gridDim);
 function createGrid(gridDim) {
     for (let index = 0; index < (gridDim * gridDim); index++) {
         const square = document.createElement(`div`);
-        let squareSize = 600 / gridDim - 4;
+        let squareSize = 600 / gridDim - 2;
         square.classList.add('square');
         square.style.width = squareSize + "px";
         container.appendChild(square);   
@@ -48,3 +49,14 @@ function removeGrid() {
         container.removeChild(container.firstChild)
     }
 }
+
+function resetColor() {
+    const squares = document.querySelectorAll('div.square');
+    squares.forEach((square) => {
+        square.style.backgroundColor = "aquamarine";
+    });
+    };
+
+reset.addEventListener('click', () => {
+    resetColor();
+})

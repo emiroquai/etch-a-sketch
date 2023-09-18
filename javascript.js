@@ -17,12 +17,19 @@ function createGrid(gridDim) {
     hoverColorChange();
 }
 
+function randomRGB() {
+    let x = Math.floor(Math.random() * 256);
+    let y = Math.floor(Math.random() * 256);
+    let z = Math.floor(Math.random() * 256);
+    let RGBColor = "rgb(" + x + "," + y + "," + z + ")";  
+    return RGBColor;
+  }
 
 function hoverColorChange() {
-let squares = document.querySelectorAll('div.square');
+const squares = document.querySelectorAll('div.square');
 squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'red';
+        square.style.backgroundColor = randomRGB();
     });
     });
 }
